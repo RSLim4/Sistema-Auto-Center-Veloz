@@ -1,106 +1,23 @@
-README.md — Auto Center Veloz
+Solução do problema
+A solução proposta para a Auto Center Veloz é desenvolver um sistema web para digitalizar e centralizar o atendimento da oficina. O sistema permitirá que a equipe registre clientes, veículos, diagnósticos, serviços e orçamentos em um único lugar.
 
+O cliente poderá acompanhar o andamento do veículo e receber informações sobre os serviços necessários, incluindo fotos, vídeos, valores e previsão de conclusão. Dessa forma, será possível reduzir a dependência de ligações e mensagens manuais.
 
-Auto Center Veloz
-Sistema web desenvolvido para melhorar a comunicação entre a Auto Center Veloz e seus clientes, facilitando o gerenciamento de veículos, diagnósticos, orçamentos e acompanhamento dos serviços.
+Proposta
+A proposta é criar uma plataforma que facilite a comunicação entre a oficina e seus clientes durante todo o processo de manutenção.
 
-Sobre o projeto
-A Auto Center Veloz enfrentava dificuldades no atendimento devido ao uso de orçamentos impressos, ligações telefônicas e mensagens manuais. Com o aumento do número de clientes, esses processos passaram a gerar atrasos, dificuldade de organização e excesso de ligações para consultar o andamento dos veículos.
+O funcionamento será dividido em etapas:
 
-Para solucionar esse problema, foi proposta a criação de um sistema digital capaz de centralizar as informações dos clientes e dos veículos, permitindo um acompanhamento mais organizado de cada serviço.
+Cadastro: a recepção registra os dados do cliente e do veículo.
 
-Problema
-Os principais problemas identificados foram:
+Diagnóstico: o mecânico registra os problemas encontrados e pode adicionar fotos e vídeos.
 
-Dificuldade na comunicação com os clientes;
+Orçamento: a oficina cria um orçamento com os serviços, peças, valores e prazo estimado.
 
-Grande quantidade de ligações para consultar o andamento dos serviços;
+Aprovação: o cliente recebe as informações e pode aprovar ou recusar os serviços.
 
-Uso de orçamentos impressos;
+Manutenção: após a aprovação, o veículo passa para a etapa de execução dos serviços.
 
-Demora na aprovação dos orçamentos;
+Acompanhamento: o cliente consegue visualizar o status do veículo.
 
-Veículos parados aguardando autorização;
-
-Interrupções frequentes no trabalho dos mecânicos;
-
-Falta de centralização das informações dos serviços.
-
-Solução proposta
-A solução consiste em um sistema web para gerenciamento dos serviços da oficina.
-
-A plataforma permite registrar clientes e veículos, acompanhar diagnósticos, criar orçamentos e controlar o andamento de cada serviço.
-
-O sistema também foi pensado para permitir uma futura integração com o WhatsApp, possibilitando o envio de orçamentos, fotos e vídeos diretamente para o cliente.
-
-Funcionamento
-O processo de atendimento é dividido em etapas:
-
-Veículo recebido
-O cliente e o veículo são cadastrados no sistema.
-
-Diagnóstico
-O mecânico realiza a avaliação e registra os problemas encontrados.
-
-Orçamento
-São adicionados os serviços, peças, valores e previsão de conclusão.
-
-Aguardando aprovação
-O cliente recebe o orçamento e decide se deseja aprovar os serviços.
-
-Em manutenção
-Após a aprovação, os mecânicos iniciam os reparos.
-
-Serviço concluído
-Após a finalização, o sistema registra a conclusão do serviço.
-
-Pronto para retirada
-O cliente é informado de que o veículo está disponível para retirada.
-
-Funcionalidades
-Cadastro de clientes;
-
-Cadastro de veículos;
-
-Registro de diagnósticos;
-
-Controle de serviços;
-
-Criação de orçamentos;
-
-Acompanhamento do status do veículo;
-
-Organização dos veículos em atendimento;
-
-Visualização das informações do serviço;
-
-Estrutura preparada para integração com WhatsApp.
-
-Tecnologias utilizadas
-HTML5
-
-CSS
-Melhorias futuras
-O projeto poderá receber novas funcionalidades, como:
-
-Integração com WhatsApp;
-
-Envio automático de orçamentos;
-
-Envio de fotos e vídeos;
-
-Notificações automáticas;
-
-Sistema de login;
-
-Banco de dados;
-
-Histórico de manutenção dos veículos;
-
-Pagamentos online;
-
-Lembretes de revisão;
-
-Pesquisa de satisfação;
-
-Painel administrativo completo.
+Conclusão: após o término do serviço, o sistema informa que o veículo está pronto para retirada.
