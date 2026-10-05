@@ -1,0 +1,27 @@
+A principal dificuldade da Auto Center Veloz é a comunicação com os clientes e o acompanhamento dos serviços dos veículos. Atualmente, a oficina utiliza orçamentos impressos, ligações e mensagens feitas manualmente. Com o aumento do número de clientes, esse processo ficou lento e gera muitos problemas.
+
+A recepção recebe diversas ligações de clientes querendo saber o andamento do serviço. Além disso, os mecânicos precisam parar o trabalho várias vezes para passar informações sobre diagnósticos, peças e reparos. Outro problema é que muitos veículos ficam parados aguardando a aprovação do orçamento pelos clientes, o que aumenta o tempo de permanência na oficina.
+
+Para resolver essa situação, a Auto Center Veloz pode adotar um sistema digital integrado ao WhatsApp. Com ele, os clientes receberiam o orçamento pelo celular, junto com fotos e vídeos mostrando os problemas encontrados no veículo. Dessa forma, poderiam analisar as informações e aprovar ou recusar os serviços sem precisar ligar para a oficina.
+
+O processo começaria quando o veículo chegasse à oficina. A recepção faria o cadastro do cliente e do veículo. Depois, durante a avaliação, o mecânico registraria fotos e vídeos das peças que precisam de reparo ou substituição. Com essas informações, seria criado um orçamento digital contendo os serviços necessários, valores e previsão de conclusão.
+
+Após o envio do orçamento, o cliente receberia uma mensagem pelo WhatsApp com um link para acessar tudo de forma organizada. Assim, ele poderia aprovar os serviços rapidamente ou tirar dúvidas, reduzindo o tempo de espera.
+
+O sistema também permitiria acompanhar o status do veículo em tempo real. O cliente poderia visualizar etapas como:
+
+Veículo recebido;
+Em diagnóstico;
+Orçamento enviado;
+Aguardando aprovação;
+Em manutenção;
+Serviço concluído;
+Pronto para retirada.
+
+Com essas informações disponíveis, a necessidade de ligações para consultar o andamento do serviço diminuiria bastante.
+
+Internamente, a oficina teria um painel para controlar todos os veículos em atendimento. A equipe conseguiria visualizar quais carros estão em diagnóstico, aguardando aprovação, em manutenção ou prontos para entrega. Isso facilitaria a organização do trabalho e melhoraria a produtividade.
+
+A implantação poderia ser feita aos poucos, utilizando inicialmente um sistema de gestão para oficinas que já possua integração com o WhatsApp. No futuro, a empresa poderia adicionar novas funções, como histórico de manutenção, lembretes automáticos de revisão, pagamentos online e pesquisas de satisfação.
+
+Em resumo, a Auto Center Veloz não precisa mudar sua estrutura ou sua qualidade técnica. O principal passo é modernizar a comunicação com os clientes. Com um processo digital, a oficina reduzirá o tempo de espera, aumentará a produtividade da equipe, melhorará o atendimento e oferecerá mais praticidade e transparência aos clientes.

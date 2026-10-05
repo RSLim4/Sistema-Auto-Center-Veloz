@@ -1,0 +1,996 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Auto Center Veloz</title>
+    <link rel="stylesheet" href="./css/styles.css">
+</head>
+
+<body>
+
+    <header>
+        <div class="header-content">
+            <div>
+                <h1>Auto Center Veloz</h1>
+                <p>Gestão e acompanhamento de serviços automotivos</p>
+            </div>
+
+            <div class="header-status">
+                Sistema online
+            </div>
+        </div>
+    </header>
+
+    <main>
+
+        <!-- CONSULTA -->
+
+        <section class="card">
+            <div class="section-title">
+                <div>
+                    <span class="section-label">ATENDIMENTO</span>
+                    <h2>Consultar veículo</h2>
+                </div>
+            </div>
+
+            <div class="consulta">
+                <input
+                    type="text"
+                    id="placa"
+                    placeholder="Digite a placa do veículo"
+                    maxlength="8"
+                >
+
+                <button onclick="consultarVeiculo()">
+                    Consultar veículo
+                </button>
+            </div>
+
+            <div id="resultadoConsulta" class="resultado"></div>
+        </section>
+
+
+        <!-- CADASTRO -->
+
+        <section class="card">
+            <div class="section-title">
+                <div>
+                    <span class="section-label">NOVO ATENDIMENTO</span>
+                    <h2>Cadastrar cliente e veículo</h2>
+                </div>
+            </div>
+
+            <form id="cadastroForm">
+
+                <div class="form-grid">
+
+                    <div class="campo">
+                        <label for="nomeCliente">Nome do cliente</label>
+                        <input
+                            type="text"
+                            id="nomeCliente"
+                            placeholder="Nome completo"
+                        >
+                    </div>
+
+                    <div class="campo">
+                        <label for="telefoneCliente">Telefone</label>
+                        <input
+                            type="tel"
+                            id="telefoneCliente"
+                            placeholder="(00) 00000-0000"
+                        >
+                    </div>
+
+                    <div class="campo">
+                        <label for="placaCadastro">Placa</label>
+                        <input
+                            type="text"
+                            id="placaCadastro"
+                            placeholder="ABC-1234"
+                            maxlength="8"
+                        >
+                    </div>
+
+                    <div class="campo">
+                        <label for="veiculoCadastro">Veículo</label>
+                        <input
+                            type="text"
+                            id="veiculoCadastro"
+                            placeholder="Marca e modelo"
+                        >
+                    </div>
+
+                    <div class="campo">
+                        <label for="quilometragem">Quilometragem</label>
+                        <input
+                            type="number"
+                            id="quilometragem"
+                            placeholder="Ex.: 82450"
+                        >
+                    </div>
+
+                    <div class="campo">
+                        <label for="servicoSolicitado">Serviço solicitado</label>
+                        <input
+                            type="text"
+                            id="servicoSolicitado"
+                            placeholder="Ex.: Revisão dos freios"
+                        >
+                    </div>
+
+                </div>
+
+                <button type="button" onclick="cadastrarVeiculo()">
+                    Cadastrar atendimento
+                </button>
+
+                <div id="mensagemCadastro" class="mensagem"></div>
+
+            </form>
+        </section>
+
+
+        <!-- INFORMAÇÕES DO VEÍCULO -->
+
+        <section class="card">
+
+            <div class="section-title">
+                <div>
+                    <span class="section-label">VEÍCULO</span>
+                    <h2>Informações do veículo</h2>
+                </div>
+            </div>
+
+            <div class="dados-veiculo">
+
+                <div>
+                    <span>Cliente</span>
+                    <strong id="cliente">João Silva</strong>
+                </div>
+
+                <div>
+                    <span>Veículo</span>
+                    <strong id="veiculo">Honda Civic</strong>
+                </div>
+
+                <div>
+                    <span>Placa</span>
+                    <strong id="placaVeiculo">ABC-1234</strong>
+                </div>
+
+                <div>
+                    <span>Quilometragem</span>
+                    <strong id="kmVeiculo">82.450 km</strong>
+                </div>
+
+            </div>
+
+        </section>
+
+
+        <!-- DIAGNÓSTICO -->
+
+        <section class="card">
+
+            <div class="section-title">
+                <div>
+                    <span class="section-label">MECÂNICO</span>
+                    <h2>Diagnóstico do veículo</h2>
+                </div>
+            </div>
+
+            <div class="diagnostico-form">
+
+                <div class="campo">
+                    <label for="diagnosticoTexto">
+                        Descrição do diagnóstico
+                    </label>
+
+                    <textarea
+                        id="diagnosticoTexto"
+                        rows="5"
+                        placeholder="Descreva os problemas encontrados no veículo..."
+                    ></textarea>
+                </div>
+
+                <div class="campo">
+                    <label for="fotos">
+                        Fotos do diagnóstico
+                    </label>
+
+                    <input
+                        type="file"
+                        id="fotos"
+                        accept="image/*"
+                        multiple
+                    >
+                </div>
+
+                <div class="campo">
+                    <label for="video">
+                        Vídeo do diagnóstico
+                    </label>
+
+                    <input
+                        type="file"
+                        id="video"
+                        accept="video/*"
+                    >
+                </div>
+
+                <button type="button" onclick="salvarDiagnostico()">
+                    Salvar diagnóstico
+                </button>
+
+                <div id="mensagemDiagnostico" class="mensagem"></div>
+
+            </div>
+
+            <div class="diagnostico-preview">
+
+                <img
+                    src="https://via.placeholder.com/500x300"
+                    alt="Peça com desgaste"
+                >
+
+                <div>
+                    <h3>Pastilhas de freio dianteiras</h3>
+
+                    <p>
+                        Durante a inspeção foi identificado desgaste
+                        elevado nas pastilhas de freio dianteiras.
+                    </p>
+
+                    <p>
+                        Recomenda-se a substituição para garantir
+                        segurança e evitar danos ao sistema de frenagem.
+                    </p>
+                </div>
+
+            </div>
+
+        </section>
+
+
+        <!-- ORÇAMENTO -->
+
+        <section class="card">
+
+            <div class="section-title">
+                <div>
+                    <span class="section-label">ORÇAMENTO</span>
+                    <h2>Orçamento digital</h2>
+                </div>
+            </div>
+
+            <div class="orcamento-lista">
+
+                <div class="orcamento-item">
+
+                    <div>
+                        <strong>Troca de pastilhas de freio</strong>
+
+                        <p>
+                            Substituição das pastilhas dianteiras.
+                        </p>
+                    </div>
+
+                    <span>R$ 250,00</span>
+
+                </div>
+
+                <div class="orcamento-item">
+
+                    <div>
+                        <strong>Mão de obra</strong>
+
+                        <p>
+                            Substituição e revisão do sistema de freios.
+                        </p>
+                    </div>
+
+                    <span>R$ 200,00</span>
+
+                </div>
+
+            </div>
+
+            <div class="orcamento-adicionar">
+
+                <input
+                    type="text"
+                    id="novoServico"
+                    placeholder="Nome do serviço ou peça"
+                >
+
+                <input
+                    type="number"
+                    id="novoValor"
+                    placeholder="Valor"
+                    step="0.01"
+                >
+
+                <button onclick="adicionarServico()">
+                    Adicionar
+                </button>
+
+            </div>
+
+            <div class="total">
+
+                <span>Total do orçamento</span>
+
+                <strong id="valorTotal">
+                    R$ 450,00
+                </strong>
+
+            </div>
+
+            <div class="prazo">
+
+                <div>
+                    <span>Prazo estimado</span>
+                    <strong>Hoje, até 16:00</strong>
+                </div>
+
+                <div>
+                    <span>Validade do orçamento</span>
+                    <strong>7 dias</strong>
+                </div>
+
+            </div>
+
+            <div class="botoes">
+
+                <button
+                    class="aprovar"
+                    onclick="aprovarOrcamento()"
+                >
+                    Aprovar serviço
+                </button>
+
+                <button
+                    class="recusar"
+                    onclick="recusarOrcamento()"
+                >
+                    Recusar serviço
+                </button>
+
+                <button
+                    class="whatsapp"
+                    onclick="enviarWhatsApp()"
+                >
+                    Enviar pelo WhatsApp
+                </button>
+
+            </div>
+
+            <div id="mensagemOrcamento" class="mensagem"></div>
+
+        </section>
+
+
+        <!-- STATUS -->
+
+        <section class="card">
+
+            <div class="section-title">
+                <div>
+                    <span class="section-label">ACOMPANHAMENTO</span>
+                    <h2>Status do veículo</h2>
+                </div>
+            </div>
+
+            <div class="status">
+
+                <div class="status-item ativo">
+                    <span>1</span>
+                    <p>Veículo recebido</p>
+                </div>
+
+                <div class="status-item ativo">
+                    <span>2</span>
+                    <p>Em diagnóstico</p>
+                </div>
+
+                <div class="status-item ativo">
+                    <span>3</span>
+                    <p>Orçamento enviado</p>
+                </div>
+
+                <div class="status-item atual">
+                    <span>4</span>
+                    <p>Aguardando aprovação</p>
+                </div>
+
+                <div class="status-item">
+                    <span>5</span>
+                    <p>Em manutenção</p>
+                </div>
+
+                <div class="status-item">
+                    <span>6</span>
+                    <p>Serviço concluído</p>
+                </div>
+
+                <div class="status-item">
+                    <span>7</span>
+                    <p>Pronto para retirada</p>
+                </div>
+
+            </div>
+
+        </section>
+
+
+        <!-- PREVISÃO -->
+
+        <section class="card">
+
+            <div class="section-title">
+                <div>
+                    <span class="section-label">PRAZO</span>
+                    <h2>Previsão do serviço</h2>
+                </div>
+            </div>
+
+            <div class="previsao">
+
+                <div>
+                    <span>Entrada do veículo</span>
+                    <strong>05/10/2026 - 08:30</strong>
+                </div>
+
+                <div>
+                    <span>Previsão de conclusão</span>
+                    <strong>05/10/2026 - 16:00</strong>
+                </div>
+
+            </div>
+
+        </section>
+
+
+        <!-- HISTÓRICO -->
+
+        <section class="card">
+
+            <div class="section-title">
+                <div>
+                    <span class="section-label">HISTÓRICO</span>
+                    <h2>Histórico do veículo</h2>
+                </div>
+            </div>
+
+            <div class="historico">
+
+                <div class="historico-item">
+
+                    <div class="historico-data">
+                        15/07/2026
+                    </div>
+
+                    <div>
+                        <strong>Troca de óleo</strong>
+                        <p>
+                            Troca de óleo e filtro realizada.
+                        </p>
+                    </div>
+
+                    <span>R$ 280,00</span>
+
+                </div>
+
+                <div class="historico-item">
+
+                    <div class="historico-data">
+                        10/03/2026
+                    </div>
+
+                    <div>
+                        <strong>Revisão preventiva</strong>
+                        <p>
+                            Revisão geral do veículo.
+                        </p>
+                    </div>
+
+                    <span>R$ 520,00</span>
+
+                </div>
+
+            </div>
+
+        </section>
+
+
+        <!-- PAINEL -->
+
+        <section class="card">
+
+            <div class="section-title">
+                <div>
+                    <span class="section-label">GESTÃO</span>
+                    <h2>Painel da oficina</h2>
+                </div>
+            </div>
+
+            <div class="resumo">
+
+                <div class="resumo-item">
+                    <span>Em diagnóstico</span>
+                    <strong>2</strong>
+                </div>
+
+                <div class="resumo-item">
+                    <span>Aguardando aprovação</span>
+                    <strong>3</strong>
+                </div>
+
+                <div class="resumo-item">
+                    <span>Em manutenção</span>
+                    <strong>4</strong>
+                </div>
+
+                <div class="resumo-item">
+                    <span>Prontos</span>
+                    <strong>2</strong>
+                </div>
+
+            </div>
+
+            <div class="filtros">
+
+                <input
+                    type="text"
+                    placeholder="Pesquisar por placa ou cliente"
+                    id="filtro"
+                    onkeyup="filtrarTabela()"
+                >
+
+                <select id="filtroStatus" onchange="filtrarTabela()">
+                    <option value="">Todos os status</option>
+                    <option value="Aguardando Aprovação">
+                        Aguardando Aprovação
+                    </option>
+                    <option value="Em Manutenção">
+                        Em Manutenção
+                    </option>
+                    <option value="Pronto para Retirada">
+                        Pronto para Retirada
+                    </option>
+                </select>
+
+            </div>
+
+            <div class="tabela-container">
+
+                <table id="tabelaVeiculos">
+
+                    <thead>
+                        <tr>
+                            <th>Placa</th>
+                            <th>Cliente</th>
+                            <th>Veículo</th>
+                            <th>Status</th>
+                        </tr>
+                    </thead>
+
+                    <tbody>
+
+                        <tr>
+                            <td>ABC-1234</td>
+                            <td>João Silva</td>
+                            <td>Honda Civic</td>
+                            <td>
+                                <span class="status-tabela aguardando">
+                                    Aguardando Aprovação
+                                </span>
+                            </td>
+                        </tr>
+
+                        <tr>
+                            <td>XYZ-5678</td>
+                            <td>Maria Souza</td>
+                            <td>Toyota Corolla</td>
+                            <td>
+                                <span class="status-tabela manutencao">
+                                    Em Manutenção
+                                </span>
+                            </td>
+                        </tr>
+
+                        <tr>
+                            <td>DEF-9012</td>
+                            <td>Carlos Oliveira</td>
+                            <td>Volkswagen T-Cross</td>
+                            <td>
+                                <span class="status-tabela pronto">
+                                    Pronto para Retirada
+                                </span>
+                            </td>
+                        </tr>
+
+                    </tbody>
+
+                </table>
+
+            </div>
+
+        </section>
+
+
+        <!-- NOTIFICAÇÕES -->
+
+        <section class="card">
+
+            <div class="section-title">
+                <div>
+                    <span class="section-label">COMUNICAÇÃO</span>
+                    <h2>Notificações automáticas</h2>
+                </div>
+            </div>
+
+            <div class="notificacoes">
+
+                <div class="notificacao">
+                    <span class="notificacao-ponto"></span>
+
+                    <div>
+                        <strong>Novo orçamento</strong>
+                        <p>
+                            O cliente recebe um aviso quando o orçamento
+                            estiver disponível.
+                        </p>
+                    </div>
+                </div>
+
+                <div class="notificacao">
+                    <span class="notificacao-ponto"></span>
+
+                    <div>
+                        <strong>Aprovação recebida</strong>
+                        <p>
+                            A oficina é avisada quando o cliente aprovar
+                            um serviço.
+                        </p>
+                    </div>
+                </div>
+
+                <div class="notificacao">
+                    <span class="notificacao-ponto"></span>
+
+                    <div>
+                        <strong>Serviço concluído</strong>
+                        <p>
+                            O cliente recebe uma mensagem quando o veículo
+                            estiver pronto.
+                        </p>
+                    </div>
+                </div>
+
+            </div>
+
+        </section>
+
+    </main>
+
+
+    <!-- FOOTER -->
+
+    <footer>
+
+        <div class="footer-container">
+
+            <div class="footer-coluna">
+
+                <h3>Auto Center Veloz</h3>
+
+                <p>
+                    Manutenção preventiva e corretiva para veículos
+                    de passeio, com transparência, segurança e qualidade.
+                </p>
+
+            </div>
+
+            <div class="footer-coluna">
+
+                <h3>Atendimento</h3>
+
+                <p>Segunda a sexta: 08:00 às 18:00</p>
+                <p>Sábado: 08:00 às 13:00</p>
+                <p>Domingo: Fechado</p>
+
+            </div>
+
+            <div class="footer-coluna">
+
+                <h3>Contato</h3>
+
+                <p>Telefone: (41) 3333-4444</p>
+                <p>WhatsApp: (41) 99999-8888</p>
+                <p>contato@autocenterveloz.com.br</p>
+
+            </div>
+
+            <div class="footer-coluna">
+
+                <h3>Endereço</h3>
+
+                <p>Av. Principal, 1000</p>
+                <p>Centro - Curitiba, PR</p>
+
+            </div>
+
+        </div>
+
+        <div class="footer-bottom">
+
+            <p>
+                © 2026 Auto Center Veloz. Todos os direitos reservados.
+            </p>
+
+            <p>
+                Atendimento digital para facilitar o acompanhamento
+                do seu veículo.
+            </p>
+
+        </div>
+
+    </footer>
+
+
+    <script>
+
+        let totalOrcamento = 450;
+
+
+        function consultarVeiculo() {
+
+            const placa = document
+                .getElementById("placa")
+                .value
+                .trim();
+
+            const resultado =
+                document.getElementById("resultadoConsulta");
+
+            if (!placa) {
+
+                resultado.textContent =
+                    "Digite uma placa para realizar a consulta.";
+
+                resultado.className =
+                    "resultado erro";
+
+                return;
+            }
+
+            resultado.textContent =
+                "Veículo encontrado. As informações estão disponíveis abaixo.";
+
+            resultado.className =
+                "resultado sucesso";
+
+            document.getElementById(
+                "placaVeiculo"
+            ).textContent = placa.toUpperCase();
+        }
+
+
+        function cadastrarVeiculo() {
+
+            const nome =
+                document.getElementById("nomeCliente").value;
+
+            const placa =
+                document.getElementById("placaCadastro").value;
+
+            const veiculo =
+                document.getElementById("veiculoCadastro").value;
+
+            const km =
+                document.getElementById("quilometragem").value;
+
+            const servico =
+                document.getElementById("servicoSolicitado").value;
+
+            const mensagem =
+                document.getElementById("mensagemCadastro");
+
+            if (!nome || !placa || !veiculo || !servico) {
+
+                mensagem.textContent =
+                    "Preencha os campos obrigatórios para cadastrar o atendimento.";
+
+                mensagem.className =
+                    "mensagem erro";
+
+                return;
+            }
+
+            document.getElementById("cliente").textContent = nome;
+
+            document.getElementById("placaVeiculo").textContent =
+                placa.toUpperCase();
+
+            document.getElementById("veiculo").textContent =
+                veiculo;
+
+            if (km) {
+
+                document.getElementById("kmVeiculo").textContent =
+                    Number(km).toLocaleString("pt-BR") + " km";
+            }
+
+            mensagem.textContent =
+                "Cliente e veículo cadastrados com sucesso.";
+
+            mensagem.className =
+                "mensagem sucesso";
+        }
+
+
+        function salvarDiagnostico() {
+
+            const texto =
+                document.getElementById("diagnosticoTexto").value;
+
+            const mensagem =
+                document.getElementById("mensagemDiagnostico");
+
+            if (!texto) {
+
+                mensagem.textContent =
+                    "Digite o diagnóstico antes de salvar.";
+
+                mensagem.className =
+                    "mensagem erro";
+
+                return;
+            }
+
+            mensagem.textContent =
+                "Diagnóstico salvo com sucesso.";
+
+            mensagem.className =
+                "mensagem sucesso";
+        }
+
+
+        function adicionarServico() {
+
+            const servico =
+                document.getElementById("novoServico").value;
+
+            const valor =
+                Number(
+                    document.getElementById("novoValor").value
+                );
+
+            if (!servico || !valor) {
+                return;
+            }
+
+            totalOrcamento += valor;
+
+            document.getElementById(
+                "valorTotal"
+            ).textContent =
+                totalOrcamento.toLocaleString(
+                    "pt-BR",
+                    {
+                        style: "currency",
+                        currency: "BRL"
+                    }
+                );
+
+            document.getElementById("novoServico").value = "";
+            document.getElementById("novoValor").value = "";
+        }
+
+
+        function aprovarOrcamento() {
+
+            const mensagem =
+                document.getElementById("mensagemOrcamento");
+
+            mensagem.textContent =
+                "Orçamento aprovado. O serviço foi liberado para manutenção.";
+
+            mensagem.className =
+                "mensagem sucesso";
+
+            const atual =
+                document.querySelector(".status-item.atual");
+
+            if (atual) {
+
+                atual.classList.remove("atual");
+                atual.classList.add("ativo");
+
+                const proximo =
+                    atual.nextElementSibling;
+
+                if (proximo) {
+                    proximo.classList.add("atual");
+                }
+            }
+        }
+
+
+        function recusarOrcamento() {
+
+            const mensagem =
+                document.getElementById("mensagemOrcamento");
+
+            mensagem.textContent =
+                "Orçamento recusado. A oficina foi informada.";
+
+            mensagem.className =
+                "mensagem erro";
+        }
+
+
+        function enviarWhatsApp() {
+
+            const telefone = "5541999998888";
+
+            const mensagem =
+                "Olá! Seu orçamento da Auto Center Veloz está disponível. " +
+                "Acesse o sistema para visualizar os serviços, valores " +
+                "e aprovar o atendimento.";
+
+            const url =
+                "https://wa.me/" +
+                telefone +
+                "?text=" +
+                encodeURIComponent(mensagem);
+
+            window.open(url, "_blank");
+        }
+
+
+        function filtrarTabela() {
+
+            const busca =
+                document
+                    .getElementById("filtro")
+                    .value
+                    .toLowerCase();
+
+            const status =
+                document.getElementById("filtroStatus").value;
+
+            const linhas =
+                document.querySelectorAll(
+                    "#tabelaVeiculos tbody tr"
+                );
+
+            linhas.forEach(function (linha) {
+
+                const texto =
+                    linha.textContent.toLowerCase();
+
+                const correspondeBusca =
+                    texto.includes(busca);
+
+                const correspondeStatus =
+                    !status ||
+                    texto.includes(status.toLowerCase());
+
+                linha.style.display =
+                    correspondeBusca &&
+                    correspondeStatus
+                        ? ""
+                        : "none";
+            });
+        }
+
+    </script>
+
+</body>
+
+</html>
